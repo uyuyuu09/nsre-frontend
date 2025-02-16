@@ -5,17 +5,17 @@ import {
     Input,
     Layout,
     ConfigProvider,
-    Tooltip,
-    Button,
-    Modal,
+    // Tooltip,
+    // Button,
+    // Modal,
     Image,
     Row,
     Col,
 } from "antd";
 import type { GetProps } from "antd";
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import {
-    SearchOutlined,
+    // SearchOutlined,
     HomeOutlined,
     UserOutlined,
     StarOutlined,
@@ -28,16 +28,16 @@ export default function Home() {
     const { Search } = Input;
     const { Header, Content, Footer } = Layout;
     const onSearch: SearchProps["onSearch"] = (value) => alert(value);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+    // const showModal = () => {
+    //     setIsModalOpen(true);
+    // };
+    // const handleOk = () => {
+    //     setIsModalOpen(false);
+    // };
+    // const handleCancel = () => {
+    //     setIsModalOpen(false);
+    // };
     const suffix = (
         <AudioOutlined
             style={{
