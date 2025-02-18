@@ -1,7 +1,8 @@
 "use client";
 
 import "@ant-design/v5-patch-for-react-19";
-import { Layout, ConfigProvider, Image, Card } from "antd";
+// import { Layout, ConfigProvider, Image, Card } from "antd";
+import { Layout, ConfigProvider, Card } from "antd";
 // import React from "react";
 import {
     StarOutlined,
