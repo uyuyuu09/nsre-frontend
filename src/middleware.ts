@@ -5,9 +5,9 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-    // if (process.env.ENABLE_BASIC_AUTH !== "true") {
-    //     return NextResponse.next();
-    // }
+    if (process.env.ENABLE_BASIC_AUTH !== "true") {
+        return NextResponse.next();
+    }
     if (
         process.env.BASIC_AUTH_USERNAME === undefined ||
         process.env.BASIC_AUTH_PASSWORD === undefined

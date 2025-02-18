@@ -1,151 +1,102 @@
 "use client";
 
 import "@ant-design/v5-patch-for-react-19";
+import { Layout, ConfigProvider, Image, Card } from "antd";
+// import React from "react";
 import {
-    Input,
-    Layout,
-    ConfigProvider,
-    // Tooltip,
-    // Button,
-    // Modal,
-    Image,
-    Row,
-    Col,
-} from "antd";
-import type { GetProps } from "antd";
-// import React, { useState } from "react";
-import {
-    // SearchOutlined,
-    HomeOutlined,
-    UserOutlined,
     StarOutlined,
-    HeartOutlined,
-    AudioOutlined,
+    DislikeOutlined,
+    LikeOutlined,
+    SendOutlined,
 } from "@ant-design/icons";
 
-type SearchProps = GetProps<typeof Input.Search>;
 export default function Home() {
-    const { Search } = Input;
-    const { Header, Content, Footer } = Layout;
-    const onSearch: SearchProps["onSearch"] = (value) => alert(value);
-    // const [isModalOpen, setIsModalOpen] = useState(false);
-    // const showModal = () => {
-    //     setIsModalOpen(true);
+    const { Content, Sider } = Layout;
+    // const content_style: React.CSSProperties = {
+    //     display: "flex",
+    //     objectFit: "cover",
+    //     height: "calc(100svh - 45px)",
+    //     width: "100vw",
     // };
-    // const handleOk = () => {
-    //     setIsModalOpen(false);
-    // };
-    // const handleCancel = () => {
-    //     setIsModalOpen(false);
-    // };
-    const suffix = (
-        <AudioOutlined
-            style={{
-                fontSize: 16,
-                color: "#1677ff",
-            }}
-        />
-    );
-    const header_style: React.CSSProperties = {
+    const sider_style: React.CSSProperties = {
+        marginLeft: "80%",
+        fontSize: "30px",
         display: "flex",
-        width: "100%",
+        position: "absolute",
         justifyContent: "center",
-        alignItems: "center",
-        borderRadius: "0px",
+        top: "50%",
+        transform: "translateY(-50%)",
+        lineHeight: "100px",
     };
-    const default_nav_style: React.CSSProperties = {
-        fontSize: "25px",
-        display: "flex",
-        alignItems: "center",
-        padding: "10px",
+    const info_card_style: React.CSSProperties = {
+        zIndex: 10,
+        top: "calc((100svh - 45px) - 80px)",
+        transform: "translateY(40%)",
+        position: "absolute",
+        marginLeft: "20px",
+        backgroundColor: "rgba(255, 255, 255, 0)",
+        color: "rgb(255, 255, 255)",
+        fontWeight: "bold",
+        fontSize: "20px",
+        boxShadow: "none",
     };
-    const content_style: React.CSSProperties = {
-        height: "100%",
+    const sider_icons_style: React.CSSProperties = {
+        color: "rgb(255, 255, 255)",
     };
     return (
         <ConfigProvider
             theme={{
-                token: {
-                    borderRadius: 0,
-                    colorPrimary: "rgb(0, 48, 87)",
-                },
                 components: {
                     Layout: {
-                        headerPadding: "0 0 0 0",
-                        headerHeight: "auto",
-                        headerBg: "rgba(255, 255, 255, 0)",
                         bodyBg: "#fff",
-                        footerBg: "#fff",
-                        footerPadding: "5px 0 5px 0",
+                        siderBg: "rgba(0, 0, 0, 0)",
                     },
                     Button: {},
-                    Input: { hoverBorderColor: "#fff" },
+                    Card: {
+                        headerPadding: 0,
+                        bodyPadding: 0,
+                    },
                 },
             }}
         >
-            <Layout style={{ height: "100svh", width: "100vw" }}>
-                <Header style={header_style}>
-                    <Search
-                        placeholder="input search text"
-                        enterButton="Search"
-                        size="large"
-                        suffix={suffix}
-                        onSearch={onSearch}
-                    />
-                </Header>
-                <Layout>
-                    <Content style={{ overflow: "hidden" }}>
-                        <Image
-                            src="/test.jpg"
-                            style={content_style}
-                            preview={false}
-                        />
-                    </Content>
-                </Layout>
-                <Footer
-                    style={{
-                        borderTop: "1px solid rgb(206, 206, 206)",
-                    }}
+            <Layout>
+                <Card
+                    variant="borderless"
+                    style={info_card_style}
                 >
-                    <Row>
-                        <Col
-                            span={6}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <HomeOutlined style={default_nav_style} />
-                        </Col>
-                        <Col
-                            span={6}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <StarOutlined style={default_nav_style} />
-                        </Col>
-                        <Col
-                            span={6}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <HeartOutlined style={default_nav_style} />
-                        </Col>
-                        <Col
-                            span={6}
-                            style={{
-                                display: "flex",
-                                justifyContent: "center",
-                            }}
-                        >
-                            <UserOutlined style={default_nav_style} />
-                        </Col>
-                    </Row>
-                </Footer>
+                    詳細
+                </Card>
+                <Content>
+                    {/* <Image
+                        src="/tes.jpg"
+                        style={content_style}
+                        preview={false}
+                    /> */}
+                    <Content
+                        style={{
+                            height: "100%",
+                            backgroundColor: "rgb(0, 0, 0)",
+                        }}
+                    ></Content>
+                </Content>
+
+                <Sider
+                    width={"20%"}
+                    style={sider_style}
+                >
+                    <div>
+                        <LikeOutlined style={sider_icons_style} />
+                    </div>
+                    <div>
+                        <DislikeOutlined style={sider_icons_style} />
+                    </div>
+                    <div>
+                        <StarOutlined style={sider_icons_style} />
+                    </div>
+                    <div>
+                        <SendOutlined style={sider_icons_style} />
+                    </div>
+                </Sider>
             </Layout>
         </ConfigProvider>
     );
