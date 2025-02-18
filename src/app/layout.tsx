@@ -1,8 +1,9 @@
 "use client";
 import "./globals.css";
 import "@ant-design/v5-patch-for-react-19";
-import { Input, Layout, ConfigProvider, Row, Col } from "antd";
-import type { GetProps } from "antd";
+// import { Input, Layout, ConfigProvider, Row, Col } from "antd";
+import { Layout, ConfigProvider, Row, Col } from "antd";
+// import type { GetProps } from "antd";
 // import React, { useState } from "react";
 import Link from "next/link";
 import {
@@ -14,7 +15,7 @@ import {
     BellOutlined,
 } from "@ant-design/icons";
 
-type SearchProps = GetProps<typeof Input.Search>;
+// type SearchProps = GetProps<typeof Input.Search>;
 export default function RootLayout({
     children,
 }: Readonly<{
