@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import "@ant-design/v5-patch-for-react-19";
-import { Button, Result, Flex, Layout } from "antd";
+import { Button, Result, Layout } from "antd";
 
 export default function NotFound() {
     const { Content } = Layout;

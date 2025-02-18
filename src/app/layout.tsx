@@ -21,7 +21,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     const { Footer } = Layout;
-    const onSearch: SearchProps["onSearch"] = (value) => alert(value);
+    // const onSearch: SearchProps["onSearch"] = (value) => alert(value);
     const default_nav_icon_style: React.CSSProperties = {
         fontSize: "20px",
         display: "flex",
